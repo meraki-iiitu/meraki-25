@@ -10,7 +10,6 @@ const images = [
     "/images/backgrounds/about1.jpeg",
     "/images/backgrounds/contact.jpeg",
     "/images/backgrounds/contact.jpg",
-    "/images/backgrounds/Home1.jpeg",
 ];
 
 export default function Gallery() {

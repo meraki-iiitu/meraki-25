@@ -1,22 +1,35 @@
-import { Iceland } from "next/font/google";
+import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import LayoutWrapper from "./layoutWrapper";
+import Navbar from "@/components/Navbar/Navbar";
+// import Footer from "@/components/Footer/page";
+import Footer from "@/components/Footer/Footer";
 
-const IcelandFont = Iceland({
+
+const geistSans = Geist({
+  variable: "--font-geist-sans",
   subsets: ["latin"],
-  weight: "400",
+});
+
+const geistMono = Geist_Mono({
+  variable: "--font-geist-mono",
+  subsets: ["latin"],
 });
 
 export const metadata = {
   title: "Meraki 2K25",
-  description: "Official website of Meraki 2K25, the annual techfest of IIIT Una",
+  description:
+    "Official website of Meraki 2K25, the annual techfest of IIIT Una",
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={IcelandFont.className}>
-        <LayoutWrapper>{children}</LayoutWrapper>
+      <body
+        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+      >
+        <Navbar />
+        {children}
+        <Footer />
       </body>
     </html>
   );

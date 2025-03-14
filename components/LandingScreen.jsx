@@ -2,48 +2,34 @@
 import { OrbitControls, useTexture } from "@react-three/drei";
 import { Bloom, EffectComposer } from '@react-three/postprocessing'
 import { Canvas, useFrame } from "@react-three/fiber";
-import React, { useRef, useState, useEffect } from "react";
+import React, { useRef } from "react";
 import * as THREE from "three";
 
 const BackgroundMesh = () => {
-    const tex = useTexture("/images/image1.png");
+    const tex = useTexture("/images/image.png");
     const cyl = useRef(null);
-    const [size, setSize] = useState([2, 2, 2]);
-
-    useEffect(() => {
-        const updateSize = () => {
-            if (window.innerWidth < 768) {
-                setSize([1.2, 1.2, 1.2]);
-            } else {
-                setSize([2, 2, 2]);
-            }
-        };
-        updateSize();
-        window.addEventListener("resize", updateSize);
-        return () => window.removeEventListener("resize", updateSize);
-    }, []);
-
     useFrame((state, delta) => {
-        cyl.current.rotation.y += delta * 0.8;
-    });
+        cyl.current.rotation.y += delta;
+    })
 
     return (
-        <group rotation={[0, 1.4, 0.4]}>
-            <mesh ref={cyl} scale={size}>
-                <cylinderGeometry args={[1, 1, 1, 100, 100, true]} />
+        <group rotation={[0, 1.4, 0.5]}>
+            <mesh ref={cyl} >
+                <cylinderGeometry args={[2, 2, 2, 60, 60, true]} />
                 <meshStandardMaterial map={tex} transparent side={THREE.DoubleSide} />
             </mesh>
         </group>
+
     );
 };
 
 const LandingScreen = () => {
     return (
-        <Canvas camera={{ fov: 50 }}>
-            <OrbitControls enableZoom={false} />
+        <Canvas camera={{ fov: 60 }}>
+            <OrbitControls />
             <ambientLight />
             <BackgroundMesh />
-        </Canvas>
+        </Canvas >
     );
 };
 

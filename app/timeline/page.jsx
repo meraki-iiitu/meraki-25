@@ -1,8 +1,8 @@
-export default function Events() {
+export default function Timeline() {
     return (
         <>
             <div className="w-screen inline-flex text-4xl h-screen items-center justify-center">
-            Events Page
+                Timeline Page
             </div>
         </>
     );

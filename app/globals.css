@@ -1,12 +1,10 @@
 @import "tailwindcss";
 
-/* Theme Variables */
 @theme {
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
-/* Light & Dark Mode Colors */
 :root {
   --background: #ffffff;
   --foreground: #171717;
@@ -19,15 +17,11 @@
   }
 }
 
-/* Global Styles */
 body {
   color: var(--foreground);
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
-  height: 100%;
 }
-
-/* Clip Path Styles */
 .clip-slant-right {
   clip-path: polygon(0% 0%, 100% 0%, 100% 60%, 0% 100%);
 }
@@ -36,35 +30,11 @@ body {
   clip-path: polygon(0% 0%, 100% 40%, 100% 100%, 0% 100%);
 }
 
-/* Utility Classes */
-@layer utilities {
-  .scroll-hidden::-webkit-scrollbar {
-    display: none;
-  }
-
-  .scroll-hidden {
-    scrollbar-width: none;
-  }
+.scroll-hidden::-webkit-scrollbar {
+  display: none;
 }
 
-/* Marquee Animation */
-@keyframes marquee-vertical {
-  from {
-    transform: translateY(0%);
-  }
-  to {
-    transform: translateY(-50%);
-  }
+.scroll-hidden {
+  scrollbar-width: none;
 }
 
-.animate-marquee-vertical {
-  animation: marquee-vertical var(--duration, 15s) linear infinite;
-}
-
-/* Responsive Adjustments */
-@media (max-width: 768px) {
-  .marquee-container {
-    width: 100%;
-    height: 200px;
-  }
-}

@@ -15,7 +15,7 @@ function Accordion() {
       className="flex flex-col items-center justify-center min-h-screen bg-cover bg-center"
       style={{ backgroundImage: "url('/images/backgrounds/faq.jpeg')" }}
     >
-      <div className="h-screen inline-flex items-center justify-center mt-12 mb-16">
+      <div className="w-screen h-screen bg-black/40 background-blur-lg inline-flex items-center justify-center">
         <div className="max-w-[80vw] md:max-w-2xl lg:max-w-4xl bg-white/10 p-6 rounded-xl shadow-lg border border-white/20 max-h-[95vh] overflow-y-auto scroll-hidden">
 
           {data.length > 0 ? (

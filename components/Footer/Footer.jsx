@@ -40,8 +40,8 @@ const Footer = () => {
         </div>
       </div>
       <div className={`md:hidden relatuve mt-[-60px] bottom-0 ${iceland.className} left-0 right-0 bg-black w-full h-30 flex flex-col justify-center items-center px-6 py-4 z-50`}>
-        <h2 className="text-2xl tracking-wide text-white">MERAKI - AY'25</h2>
-        <h2 className="text-2xl tracking-wide text-white">IIIT UNA</h2>
+        <h2 className="text-2xl tracking-widest text-white">MERAKI - AY'25</h2>
+        <h2 className="text-2xl tracking-widest text-white">IIIT UNA</h2>
         <div className="flex gap-4 mt-2">
           <a href="#">
             <Image src={insta} alt="Follow us on Instagram" className="w-8 h-8" />

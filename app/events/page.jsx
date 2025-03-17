@@ -25,6 +25,7 @@ export default function Events() {
                 image={event.image}
               />
             </div>
+<<<<<<< HEAD
           ))
         ) : (
           <p className="text-white text-lg text-center col-span-full">No events available</p>
@@ -32,4 +33,8 @@ export default function Events() {
       </div>
     </>
   );
+=======
+        </>
+    );
+>>>>>>> 1688e3d4c01cc4af407e84a2d3dcc3963dbfd5e4
 }
